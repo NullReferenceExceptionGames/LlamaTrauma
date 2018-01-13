@@ -1,6 +1,11 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 29b32f032343b4db584c9df05f8d98a6
 timeCreated: 1515876307
+=======
+guid: 8f42fa7b7c3c844a997e8a58ff0e373c
+timeCreated: 1515873791
+>>>>>>> d443eec62bf4053b15d0f2ba478d3739e801f0d1
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName: {}
@@ -65,7 +70,10 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
+<<<<<<< HEAD
     androidETC2FallbackOverride: 0
+=======
+>>>>>>> d443eec62bf4053b15d0f2ba478d3739e801f0d1
   spriteSheet:
     serializedVersion: 2
     sprites: []

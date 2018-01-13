@@ -33,6 +33,7 @@ public class PlayerShoot : MonoBehaviour
                 var projectileOriginal = GameObject.Find(firingMode.GetProjectileName());
                 var projectile = Instantiate(projectileOriginal);
                 firingMode.Fire(ray, projectile);
+				Destroy (projectile, 4);
                 yield return new WaitForSeconds(firingMode.GetRepeatTimeSeconds());
             }
             yield return new WaitForFixedUpdate();
