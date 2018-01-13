@@ -9,13 +9,10 @@ public class Bullet : MonoBehaviour
     public void SetIsTower(bool isTowerIn)
     {
         isTower = isTowerIn;
-        print(isTower);
     }
 
     void OnTriggerEnter(Collider other)
     {
-        print(isTower);
-        print(other.tag);
         if (other.tag != "Tower")
         {
             Invoke("Terminate", 0.1f);
