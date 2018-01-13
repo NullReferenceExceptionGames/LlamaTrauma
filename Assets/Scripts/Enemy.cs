@@ -5,7 +5,6 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     const float unitsPerSecond = 2f;
-
     Vector3[] pathPoints;
     float[] pathPointTimings;
     float lastIterStart;

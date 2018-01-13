@@ -10,16 +10,20 @@ public abstract class Tower : MonoBehaviour
     void Update()
     {
         var enemies = GameObject.FindGameObjectsWithTag("Enemy");
-        GameObject closestEnemy;
-        float dis = 1000f;
-        foreach (var enemy in enemies)
+        if (enemies.Length > 0)
         {
-            var tmpDis = Vector3.Distance(transform.position, enemy.transform.position);
-            if (tmpDis < dis)
+            var closestEnemyPosition = Vector3.zero;
+            var dis = 1000f;
+            foreach (var enemy in enemies)
             {
-                dis = tmpDis;
-                closestEnemy = enemy;
+                var tmpDis = Vector3.Distance(transform.position, enemy.transform.position);
+                if (tmpDis < dis)
+                {
+                    dis = tmpDis;
+                    closestEnemyPosition = enemy.transform.position;
+                }
             }
+            Shoot(closestEnemyPosition);
         }
     }
 }
