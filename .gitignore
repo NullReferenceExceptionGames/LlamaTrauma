@@ -37,3 +37,6 @@ sysinfo.txt
 
 # OS files
 .DS_Store
+
+# Meta files
+*.meta
