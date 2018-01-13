@@ -191,7 +191,6 @@ Camera:
   m_TargetEye: 3
   m_HDR: 0
   m_AllowMSAA: 1
-  m_AllowDynamicResolution: 0
   m_ForceIntoRT: 0
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
@@ -239,7 +238,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51665d6a7881f44bea39393fd3204577, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tower: {fileID: 1150679370170906, guid: a5903908565e54f95bacaa7668eb4842, type: 2}
+  tower: {fileID: 1790076028583340, guid: b77122004b9bc410085f5ece76c0b01f, type: 2}
 --- !u!1 &16
 GameObject:
   m_ObjectHideFlags: 0
