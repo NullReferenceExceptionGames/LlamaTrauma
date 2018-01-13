@@ -11,19 +11,19 @@ public class ShotgunTower : Tower
 
     public override void Shoot(Transform enemy)
     {
-        var delta = enemy.position - transform.position;
+        var delta = enemy.position - hunter.transform.position;
         var force = delta.normalized * bulletSpeed;
         var lookAngle = Quaternion.LookRotation(delta);
         for (var i = 0; i < numBullets; i++)
         {
             var bul = Instantiate(bullet);
-            bul.transform.position = transform.position;
+            bul.transform.position = hunter.transform.position;
             bul.transform.rotation = lookAngle;
             bul.GetComponent<Bullet>().SetIsTower(true);
             var randomAddition = new Vector3(randomVelocityAddition(), randomVelocityAddition(), randomVelocityAddition());
             var forceRandom = force + randomAddition;
             bul.GetComponent<Rigidbody>().AddForce(forceRandom);
-			Destroy (bul, 4);
+            Destroy(bul, 4);
         }
         hunter.transform.rotation = lookAngle;
     }

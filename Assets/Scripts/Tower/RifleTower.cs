@@ -9,7 +9,7 @@ public class RifleTower : Tower
     public override void Shoot(Transform enemy)
     {
         enemy.GetComponent<Enemy>().TakeDamage(byte.MaxValue);
-        var delta = enemy.position - transform.position;
+        var delta = enemy.position - hunter.transform.position;
         var lookAngle = Quaternion.LookRotation(delta);
         hunter.transform.rotation = lookAngle;
     }

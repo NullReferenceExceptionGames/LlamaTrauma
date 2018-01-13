@@ -10,16 +10,16 @@ public class BowTower : Tower
 
     public override void Shoot(Transform enemy)
     {
-        var delta = enemy.position - transform.position;
+        var delta = enemy.position - hunter.transform.position;
         var force = delta.normalized * bulletSpeed;
         var bul = Instantiate(bullet);
-        bul.transform.position = transform.position;
+        bul.transform.position = hunter.transform.position;
         var lookAngle = Quaternion.LookRotation(delta);
         bul.transform.rotation = lookAngle;
         bul.GetComponent<Bullet>().SetIsTower(true);
         bul.GetComponent<Rigidbody>().AddForce(force);
         hunter.transform.rotation = lookAngle;
-		Destroy (bul, 4f);
+        Destroy(bul, 4f);
     }
 
     public override float GetFiringDelay()

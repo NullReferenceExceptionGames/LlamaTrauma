@@ -66,7 +66,6 @@ public class CreateTower : MonoBehaviour
                 }
             }
         }
-
         moneyText.text = "$" + money.ToString();
     }
 
