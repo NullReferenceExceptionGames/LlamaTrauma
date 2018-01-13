@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class FiringMode : MonoBehaviour
+public abstract class FiringMode
 {
-    protected abstract void Fire(Vector3 direction);
+    public abstract void Fire(Vector3 direction, GameObject projectile);
+    public abstract float GetRepeatTimeSeconds();
+    public abstract string GetProjectileName();
 }

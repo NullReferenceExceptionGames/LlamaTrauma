@@ -4,11 +4,23 @@ using UnityEngine;
 
 public class NormalFiringMode : FiringMode
 {
-    protected override void Fire(Vector3 direction)
+    public override void Fire(Vector3 direction, GameObject bullet)
     {
-        var bullet = Instantiate(normalBullet);
         bullet.GetComponent<Bullet>().SetIsTower(false);
-        NormalFire(bullet, ray * 100f);
+        bullet.transform.position = Camera.main.transform.position;
+        var force = direction * 100f;
+        bullet.transform.rotation = Quaternion.LookRotation(force);
+        bullet.GetComponent<Rigidbody>().AddForce(force);
 
+    }
+
+    public override float GetRepeatTimeSeconds()
+    {
+        return 0.5f;
+    }
+
+    public override string GetProjectileName()
+    {
+        return "NormalBullet";
     }
 }

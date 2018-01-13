@@ -4,35 +4,34 @@ using UnityEngine;
 
 public class PlayerShoot : MonoBehaviour
 {
-    FiringState state = FiringState.BOMB;
-    [SerializeField] GameObject normalBullet;
-    [SerializeField] GameObject bomb;
+    FiringMode firingMode;
+    bool shoot = false;
 
-    public void Shoot()
+    void Start()
     {
-        var ray = Camera.main.transform.rotation * Vector3.forward;
-        switch (state)
-        {
-            case FiringState.NORMAL:
-                var bullet = Instantiate(normalBullet);
-                bullet.GetComponent<Bullet>().SetIsTower(false);
-                NormalFire(bullet, ray * 100f);
-                break;
-            case FiringState.BOMB:
-                var bombInstance = Instantiate(bomb);
-                NormalFire(bombInstance, ray * 50f);
-                break;
-        }
+        firingMode = new NormalFiringMode();
     }
 
-	int FiringState(){
-		return 8;
-	}
-
-    void NormalFire(GameObject proj, Vector3 force)
+    public void StartShooting()
     {
-        proj.transform.position = Camera.main.transform.position;
-        proj.transform.rotation = Quaternion.LookRotation(force);
-        proj.GetComponent<Rigidbody>().AddForce(force);
+        shoot = true;
+        StartCoroutine(Shoot());
+    }
+
+    public void StopShooting()
+    {
+        shoot = false;
+    }
+
+    IEnumerator Shoot()
+    {
+        while (shoot)
+        {
+            var ray = Camera.main.transform.rotation * Vector3.forward;
+            var projectileOriginal = GameObject.Find(firingMode.GetProjectileName());
+            var projectile = Instantiate(projectileOriginal);
+            firingMode.Fire(ray, projectile);
+            yield return new WaitForSeconds(firingMode.GetRepeatTimeSeconds());
+        }
     }
 }
