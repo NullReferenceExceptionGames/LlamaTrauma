@@ -25,10 +25,6 @@ public class PlayerShoot : MonoBehaviour
         }
     }
 
-	int FiringState(){
-		return 8;
-	}
-
     void NormalFire(GameObject proj, Vector3 force)
     {
         proj.transform.position = Camera.main.transform.position;
