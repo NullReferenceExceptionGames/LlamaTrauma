@@ -9,10 +9,12 @@ public class CreateTower : MonoBehaviour
 
     public GameObject defaultTower;
     public int money = 50;
+    int health = 100;
     Camera cam;
     int towerCount = 0;
     int towerLimit = 10;
     [SerializeField] Text moneyText;
+    [SerializeField] Text healthText;
 
     // Use this for initialization
     void Start()
@@ -48,16 +50,18 @@ public class CreateTower : MonoBehaviour
                 {
                     if (towerCount < towerLimit)
                     {
-						var parent = GameObject.FindGameObjectWithTag("EnemyPath");
-						var pathPointTransforms = parent.GetComponentsInChildren<Transform>().ToList();
-						pathPointTransforms.Remove(parent.transform);
-						foreach (var point in pathPointTransforms){
-							if(Vector3.Distance(point.transform.position, transform.position) > 0.1f && CanPayForTower(defaultTower)){
-								var tower = Instantiate(defaultTower);
-								tower.transform.position = hit.point;
-								towerCount++;
-							}
-						}
+                        var parent = GameObject.FindGameObjectWithTag("EnemyPath");
+                        var pathPointTransforms = parent.GetComponentsInChildren<Transform>().ToList();
+                        pathPointTransforms.Remove(parent.transform);
+                        foreach (var point in pathPointTransforms)
+                        {
+                            if (Vector3.Distance(point.transform.position, transform.position) > 0.1f && CanPayForTower(defaultTower))
+                            {
+                                var tower = Instantiate(defaultTower);
+                                tower.transform.position = hit.point;
+                                towerCount++;
+                            }
+                        }
                     }
                 }
             }
@@ -75,5 +79,11 @@ public class CreateTower : MonoBehaviour
             money -= cost;
         }
         return canPay;
+    }
+
+    public void TakeDamage(int damage)
+    {
+        health -= damage;
+        healthText.text = health.ToString() + " HP";
     }
 }

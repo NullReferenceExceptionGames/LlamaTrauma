@@ -69,6 +69,7 @@ public abstract class Enemy : MonoBehaviour
             }
             if (nextI == pathPoints.Length - 1)
             {
+                Camera.main.GetComponent<CreateTower>().TakeDamage(GetBounty());
                 Destroy(gameObject);
                 yield break;
             }
