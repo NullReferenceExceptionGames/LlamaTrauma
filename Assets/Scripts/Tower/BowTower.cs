@@ -17,4 +17,9 @@ public class BowTower : Tower
         bul.transform.rotation = Quaternion.LookRotation(delta);
         bul.GetComponent<Rigidbody>().AddForce(force);
     }
+
+    public override float GetFiringDelay()
+    {
+        return 0.4f;
+    }
 }
