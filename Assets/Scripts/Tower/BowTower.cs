@@ -19,6 +19,7 @@ public class BowTower : Tower
         bul.GetComponent<Bullet>().SetIsTower(true);
         bul.GetComponent<Rigidbody>().AddForce(force);
         hunter.transform.rotation = lookAngle;
+		Destroy (bul, 4f);
     }
 
     public override float GetFiringDelay()
@@ -28,6 +29,6 @@ public class BowTower : Tower
 
     public override int GetCost()
     {
-        return 20;
+        return 50;
     }
 }

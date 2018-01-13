@@ -23,6 +23,7 @@ public class ShotgunTower : Tower
             var randomAddition = new Vector3(randomVelocityAddition(), randomVelocityAddition(), randomVelocityAddition());
             var forceRandom = force + randomAddition;
             bul.GetComponent<Rigidbody>().AddForce(forceRandom);
+			Destroy (bul, 4);
         }
         hunter.transform.rotation = lookAngle;
     }
@@ -39,6 +40,6 @@ public class ShotgunTower : Tower
 
     public override int GetCost()
     {
-        return 20;
+        return 50;
     }
 }
