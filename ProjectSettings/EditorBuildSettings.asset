@@ -39,5 +39,8 @@ EditorBuildSettings:
     path: Assets/UnityARKitPlugin/Examples/FaceTracking/FaceDirectionalLightEstimate.unity
     guid: 360fd35caee4f4e069485021a27c0b06
   - enabled: 1
+    path: Assets/Scenes/MainMenu.unity
+    guid: fd4129514359c40b3bf6a6865ec0c33d
+  - enabled: 1
     path: Assets/Scenes/Main.unity
     guid: 48a97f138fec1475eb67e4d3c95d85b9
