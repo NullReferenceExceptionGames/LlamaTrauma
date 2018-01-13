@@ -8,6 +8,8 @@ public abstract class Tower : MonoBehaviour
 
     public abstract float GetFiringDelay();
 
+    public abstract GameObject GetSuccessor();
+
     void Start()
     {
         StartCoroutine(ShootLoop());
