@@ -1,10 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    const float unitsPerSecond = 0.002f;
+    const float unitsPerSecond = 0.2f;
     Vector3[] pathPoints;
     float[] pathPointTimings;
     float lastIterStart;
@@ -13,20 +14,32 @@ public class Enemy : MonoBehaviour
     void Start()
     {
         var parent = GameObject.FindGameObjectWithTag("EnemyPath");
-        var pathPointTransforms = parent.GetComponentsInChildren<Transform>();
+        var pathPointTransforms = parent.GetComponentsInChildren<Transform>().ToList();
+        pathPointTransforms.Remove(parent.transform);
+        pathPointTransforms = pathPointTransforms.OrderBy(
+            point => GetNumberBetweenBrackets(point.name)
+        ).ToList();
         var points = new List<Vector3>();
         var timings = new List<float>();
-        for (var i = 0; i < pathPointTransforms.Length - 1; i++)
+        for (var i = 0; i < pathPointTransforms.Count - 1; i++)
         {
             var currentPosition = pathPointTransforms[i].position;
             points.Add(currentPosition);
             var timing = (pathPointTransforms[i + 1].position - currentPosition).magnitude / unitsPerSecond;
             timings.Add(timing);
         }
-        points.Add(pathPointTransforms[pathPointTransforms.Length - 1].position);
+        points.Add(pathPointTransforms[pathPointTransforms.Count - 1].position);
         pathPoints = points.ToArray();
         pathPointTimings = timings.ToArray();
         StartCoroutine(FollowPath());
+    }
+
+    int GetNumberBetweenBrackets(string name)
+    {
+        var startIndex = name.IndexOf("(") + 1;
+        var endIndex = name.IndexOf(")");
+        var substring = name.Substring(startIndex, endIndex - startIndex);
+        return int.Parse(substring);
     }
 
     // Update is called once per frame
@@ -44,7 +57,6 @@ public class Enemy : MonoBehaviour
                 var interpolationCoefficient = (Time.timeSinceLevelLoad - lastIterStart) / timeDelta;
                 var newPosition = pathPoints[i] + (delta * interpolationCoefficient);
                 transform.position = newPosition;
-				print (transform.position);
                 yield return new WaitForFixedUpdate();
             }
             if (nextI == pathPoints.Length - 1)
