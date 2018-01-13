@@ -4,7 +4,7 @@ using UnityEngine;
 
 public abstract class Tower : MonoBehaviour
 {
-    public abstract void Shoot(Vector3 position);
+    public abstract void Shoot(Transform enemy);
 
     public abstract float GetFiringDelay();
     public abstract int GetCost();
@@ -25,7 +25,7 @@ public abstract class Tower : MonoBehaviour
             var enemies = GameObject.FindGameObjectsWithTag("Enemy");
             if (enemies.Length > 0)
             {
-                var closestEnemyPosition = Vector3.zero;
+                Transform closestEnemy = null;
                 var dis = 1000f;
                 foreach (var enemy in enemies)
                 {
@@ -33,10 +33,10 @@ public abstract class Tower : MonoBehaviour
                     if (tmpDis < dis)
                     {
                         dis = tmpDis;
-                        closestEnemyPosition = enemy.transform.position;
+                        closestEnemy = enemy.transform;
                     }
                 }
-                Shoot(closestEnemyPosition);
+                Shoot(closestEnemy);
             }
             yield return new WaitForSeconds(GetFiringDelay());
         }

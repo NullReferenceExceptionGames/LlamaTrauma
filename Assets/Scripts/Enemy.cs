@@ -9,6 +9,7 @@ public class Enemy : MonoBehaviour
     Vector3[] pathPoints;
     float[] pathPointTimings;
     float lastIterStart;
+    byte health = 50;
 
     // Use this for initialization
     void Start()
@@ -51,6 +52,7 @@ public class Enemy : MonoBehaviour
             var endTime = lastIterStart + pathPointTimings[i];
             var nextI = (i + 1);
             var delta = pathPoints[nextI] - pathPoints[i];
+            transform.rotation = Quaternion.LookRotation(delta);
             var timeDelta = endTime - lastIterStart;
             while (Time.timeSinceLevelLoad < endTime)
             {
@@ -64,6 +66,18 @@ public class Enemy : MonoBehaviour
                 Destroy(gameObject);
                 yield break;
             }
+        }
+    }
+
+    public void TakeDamage(byte damage)
+    {
+        if (damage < health)
+        {
+            health -= damage;
+        }
+        else
+        {
+            Destroy(gameObject);
         }
     }
 }

@@ -13,11 +13,11 @@ public class Bullet : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.tag != "Tower")
+        if (other.tag == "Enemy")
         {
-            Invoke("Terminate", 0.1f);
+            other.GetComponent<Enemy>().TakeDamage(20);
         }
-        else if (!isTower)
+        else if (!isTower && other.tag == "Tower")
         {
             other.GetComponent<Tower>().HitByPlayer();
         }
