@@ -3,13 +3,18 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public class Enemy : MonoBehaviour
+public abstract class Enemy : MonoBehaviour
 {
     const float unitsPerSecond = 0.2f;
     Vector3[] pathPoints;
     float[] pathPointTimings;
     float lastIterStart;
     byte health = 50;
+
+    protected abstract byte GetMaxHealth();
+    protected abstract void OnSpawn();
+    protected abstract void OnTakeDamage(byte health);
+    protected abstract void OnDie();
 
     // Use this for initialization
     void Start()
@@ -32,6 +37,7 @@ public class Enemy : MonoBehaviour
         points.Add(pathPointTransforms[pathPointTransforms.Count - 1].position);
         pathPoints = points.ToArray();
         pathPointTimings = timings.ToArray();
+        OnSpawn();
         StartCoroutine(FollowPath());
     }
 
@@ -43,7 +49,6 @@ public class Enemy : MonoBehaviour
         return int.Parse(substring);
     }
 
-    // Update is called once per frame
     IEnumerator FollowPath()
     {
         for (var i = 0; i < pathPoints.Length - 1; i++)
@@ -74,10 +79,11 @@ public class Enemy : MonoBehaviour
         if (damage < health)
         {
             health -= damage;
+            OnTakeDamage(health);
         }
         else
         {
-            Destroy(gameObject);
+            OnDie();
         }
     }
 }

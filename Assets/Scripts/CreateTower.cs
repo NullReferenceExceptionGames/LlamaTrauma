@@ -1,15 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class CreateTower : MonoBehaviour
 {
 
-    public GameObject tower;
+    public GameObject defaultTower;
     public int money = 100;
     Camera cam;
     int towerCount = 0;
     int towerLimit = 10;
+    [SerializeField] Text moneyText;
 
     // Use this for initialization
     void Start()
@@ -32,22 +34,38 @@ public class CreateTower : MonoBehaviour
                     var successor = hit.transform.GetComponent<Tower>().successor;
                     if (successor != null)
                     {
-                        var newTower = Instantiate(successor);
-                        newTower.transform.position = hit.transform.position;
-                        newTower.transform.rotation = hit.transform.rotation;
-                        Destroy(hit.transform.gameObject);
+                        if (CanPayForTower(successor))
+                        {
+                            var newTower = Instantiate(successor);
+                            newTower.transform.position = hit.transform.position;
+                            newTower.transform.rotation = hit.transform.rotation;
+                            Destroy(hit.transform.gameObject);
+                        }
                     }
                 }
                 else
                 {
-                    if (towerCount < towerLimit)
+                    if (towerCount < towerLimit && CanPayForTower(defaultTower))
                     {
-                        tower = Instantiate(tower);
+                        var tower = Instantiate(defaultTower);
                         tower.transform.position = hit.point;
                         towerCount++;
                     }
                 }
             }
         }
+
+        moneyText.text = "$" + money.ToString();
+    }
+
+    bool CanPayForTower(GameObject towerObject)
+    {
+        var cost = towerObject.GetComponent<Tower>().GetCost();
+        var canPay = cost <= money;
+        if (canPay)
+        {
+            money -= cost;
+        }
+        return canPay;
     }
 }
