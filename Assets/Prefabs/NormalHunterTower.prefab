@@ -52,9 +52,11 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4107564328578448}
+  - component: {fileID: 114582393048724692}
+  - component: {fileID: 135401636332952394}
   m_Layer: 0
   m_Name: NormalHunterTower
-  m_TagString: Untagged
+  m_TagString: Tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -96,7 +98,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1404443622890868}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.055429667, y: -0.3399347, z: 1.5568571}
+  m_LocalPosition: {x: -0.51, y: -2.3449402, z: 2.34}
   m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
   m_Children:
   - {fileID: 4740683730690628}
@@ -213,6 +215,19 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1070652682262262}
   m_Mesh: {fileID: 4300000, guid: 53c3d9d29c8ea4b8da6d5a86f5a34de7, type: 3}
+--- !u!114 &114582393048724692
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1404443622890868}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 478d525a05f554c5a9f0126da5559f07, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  successor: {fileID: 0}
+  bullet: {fileID: 1560192737533736, guid: 140389824e072400fb19223eae8cb5d3, type: 2}
 --- !u!114 &114651997114369308
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -226,3 +241,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   successor: {fileID: 0}
   bullet: {fileID: 1560192737533736, guid: 140389824e072400fb19223eae8cb5d3, type: 2}
+--- !u!135 &135401636332952394
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1404443622890868}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 10
+  m_Center: {x: 2.5, y: 10.5, z: -12.5}

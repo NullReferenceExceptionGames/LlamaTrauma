@@ -6,6 +6,7 @@ public class CreateTower : MonoBehaviour
 {
 
     public GameObject tower;
+    public int money = 100;
     Camera cam;
     int towerCount = 0;
     int towerLimit = 10;

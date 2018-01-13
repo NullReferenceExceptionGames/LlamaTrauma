@@ -7,8 +7,11 @@ public abstract class Tower : MonoBehaviour
     public abstract void Shoot(Vector3 position);
 
     public abstract float GetFiringDelay();
+    public abstract int GetCost();
 
     public GameObject successor;
+
+    private int hitsByPlayerBeforeSale = 3;
 
     void Start()
     {
@@ -36,6 +39,16 @@ public abstract class Tower : MonoBehaviour
                 Shoot(closestEnemyPosition);
             }
             yield return new WaitForSeconds(GetFiringDelay());
+        }
+    }
+
+    public void HitByPlayer()
+    {
+        hitsByPlayerBeforeSale--;
+        if (hitsByPlayerBeforeSale <= 0)
+        {
+            Camera.main.GetComponent<CreateTower>().money += GetCost();
+            Destroy(gameObject);
         }
     }
 }
