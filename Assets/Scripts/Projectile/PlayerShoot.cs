@@ -10,12 +10,12 @@ public class PlayerShoot : MonoBehaviour
     void Start()
     {
         firingMode = new NormalFiringMode();
+        StartCoroutine(Shoot());
     }
 
     public void StartShooting()
     {
         shoot = true;
-        StartCoroutine(Shoot());
     }
 
     public void StopShooting()
@@ -25,13 +25,17 @@ public class PlayerShoot : MonoBehaviour
 
     IEnumerator Shoot()
     {
-        while (shoot)
+        while (true)
         {
-            var ray = Camera.main.transform.rotation * Vector3.forward;
-            var projectileOriginal = GameObject.Find(firingMode.GetProjectileName());
-            var projectile = Instantiate(projectileOriginal);
-            firingMode.Fire(ray, projectile);
-            yield return new WaitForSeconds(firingMode.GetRepeatTimeSeconds());
+            while (shoot)
+            {
+                var ray = Camera.main.transform.rotation * Vector3.forward;
+                var projectileOriginal = GameObject.Find(firingMode.GetProjectileName());
+                var projectile = Instantiate(projectileOriginal);
+                firingMode.Fire(ray, projectile);
+                yield return new WaitForSeconds(firingMode.GetRepeatTimeSeconds());
+            }
+            yield return new WaitForFixedUpdate();
         }
     }
 }

@@ -8,8 +8,8 @@ public class NormalFiringMode : FiringMode
     {
         bullet.GetComponent<Bullet>().SetIsTower(false);
         bullet.transform.position = Camera.main.transform.position;
+        bullet.transform.rotation = Quaternion.LookRotation(direction);
         var force = direction * 100f;
-        bullet.transform.rotation = Quaternion.LookRotation(force);
         bullet.GetComponent<Rigidbody>().AddForce(force);
 
     }
