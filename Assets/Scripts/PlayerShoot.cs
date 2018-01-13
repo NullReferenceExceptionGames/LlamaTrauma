@@ -11,5 +11,6 @@ public class PlayerShoot : MonoBehaviour {
 		var proj = Instantiate(projectile);
 		proj.transform.position = Camera.main.transform.position;
 		proj.GetComponent<Rigidbody>().AddForce(ray * 100f);
+		Destroy (proj, 4);
 	}
 }
