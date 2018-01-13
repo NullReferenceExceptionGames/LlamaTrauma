@@ -45,5 +45,5 @@ EditorBuildSettings:
     path: Assets/Scenes/Main.unity
     guid: 48a97f138fec1475eb67e4d3c95d85b9
   - enabled: 1
-    path: Assets/Scenes/Snow.unity
-    guid: 9ac7130afc734440ab20036e777ec898
+    path: Assets/Scenes/GameOver.unity
+    guid: d79b7141e5e3446a3b8c9c1950c4bfd3
