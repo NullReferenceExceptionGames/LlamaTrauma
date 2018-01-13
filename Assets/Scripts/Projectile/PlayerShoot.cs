@@ -31,10 +31,4 @@ public class PlayerShoot : MonoBehaviour
         proj.transform.rotation = Quaternion.LookRotation(force);
         proj.GetComponent<Rigidbody>().AddForce(force);
     }
-
-    enum FiringState
-    {
-        NORMAL,
-        BOMB
-    }
 }
