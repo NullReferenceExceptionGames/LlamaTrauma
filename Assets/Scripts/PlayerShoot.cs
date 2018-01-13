@@ -4,13 +4,12 @@ using UnityEngine;
 
 public class PlayerShoot : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
+	public GameObject projectile;
+
+	public void Shoot(){
+		var ray = Camera.main.transform.rotation * Vector3.forward;
+		var proj = Instantiate(projectile);
+		proj.transform.position = Camera.main.transform.position;
+		proj.GetComponent<Rigidbody>().AddForce(ray * 100f);
 	}
 }

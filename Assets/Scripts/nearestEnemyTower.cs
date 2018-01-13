@@ -18,7 +18,7 @@ public abstract class nearestEnemyTower : MonoBehaviour {
 				dis = tmpDis;
 				closestEnemy = enemy;
 			}
-			GameObject shot = Instantiate (shot);
+			//GameObject shot = Instantiate (shot);
 		}
 	}
 }
