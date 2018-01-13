@@ -12,6 +12,7 @@ public abstract class Enemy : MonoBehaviour
     byte health = 50;
 
     protected abstract byte GetMaxHealth();
+    protected abstract int GetBounty();
     protected abstract void OnSpawn();
     protected abstract void OnTakeDamage(byte health);
     protected abstract void OnDie();
@@ -83,6 +84,7 @@ public abstract class Enemy : MonoBehaviour
         }
         else
         {
+            Camera.main.GetComponent<CreateTower>().money += GetBounty();
             OnDie();
         }
     }

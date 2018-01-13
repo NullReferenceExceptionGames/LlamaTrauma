@@ -10,6 +10,11 @@ public class SkateboardEnemy : Enemy
         return 50;
     }
 
+    protected override int GetBounty()
+    {
+        return 5;
+    }
+
     protected override void OnSpawn()
     {
         minScale = transform.localScale / 5;
