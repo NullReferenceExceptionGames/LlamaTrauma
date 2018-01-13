@@ -4,13 +4,12 @@ using UnityEngine;
 
 public class PlayerShoot : MonoBehaviour
 {
-    FiringState state = FiringState.NORMAL;
+    FiringState state = FiringState.BOMB;
     [SerializeField] GameObject normalBullet;
     [SerializeField] GameObject bomb;
 
     public void Shoot()
     {
-
         var ray = Camera.main.transform.rotation * Vector3.forward;
         switch (state)
         {
@@ -21,7 +20,7 @@ public class PlayerShoot : MonoBehaviour
                 break;
             case FiringState.BOMB:
                 var bombInstance = Instantiate(bomb);
-                NormalFire(bomb, ray * 20f);
+                NormalFire(bombInstance, ray * 50f);
                 break;
         }
     }
