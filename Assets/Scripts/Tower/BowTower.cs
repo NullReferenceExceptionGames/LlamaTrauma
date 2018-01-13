@@ -14,6 +14,7 @@ public class BowTower : Tower
         var force = delta.normalized * bulletSpeed;
         var bul = Instantiate(bullet);
         bul.transform.position = transform.position;
+        bul.transform.rotation = Quaternion.LookRotation(delta);
         bul.GetComponent<Rigidbody>().AddForce(force);
     }
 }
