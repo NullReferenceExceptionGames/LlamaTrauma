@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    const float unitsPerSecond = 0.2f;
+    const float unitsPerSecond = 0.002f;
     Vector3[] pathPoints;
     float[] pathPointTimings;
     float lastIterStart;
@@ -44,6 +44,7 @@ public class Enemy : MonoBehaviour
                 var interpolationCoefficient = (Time.timeSinceLevelLoad - lastIterStart) / timeDelta;
                 var newPosition = pathPoints[i] + (delta * interpolationCoefficient);
                 transform.position = newPosition;
+				print (transform.position);
                 yield return new WaitForFixedUpdate();
             }
             if (nextI == pathPoints.Length - 1)
