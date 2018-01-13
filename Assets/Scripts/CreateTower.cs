@@ -22,13 +22,13 @@ public class CreateTower : MonoBehaviour
         if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
         {
             var touch = Input.GetTouch(0);
-            var ray = Camera.main.ScreenPointToRay(touch.position);
+            var ray = cam.ScreenPointToRay(touch.position);
             RaycastHit hit;
             if (Physics.Raycast(ray, out hit))
             {
                 if (hit.transform.tag == "Tower")
                 {
-                    var successor = hit.transform.GetComponent<Tower>().GetSuccessor();
+                    var successor = hit.transform.GetComponent<Tower>().successor;
                     if (successor != null)
                     {
                         var newTower = Instantiate(successor);
