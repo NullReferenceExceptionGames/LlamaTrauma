@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,7 +8,7 @@ public class CreateTower : MonoBehaviour
 {
 
     public GameObject defaultTower;
-    public int money = 100;
+    public int money = 50;
     Camera cam;
     int towerCount = 0;
     int towerLimit = 10;
@@ -45,11 +46,18 @@ public class CreateTower : MonoBehaviour
                 }
                 else
                 {
-                    if (towerCount < towerLimit && CanPayForTower(defaultTower))
+                    if (towerCount < towerLimit)
                     {
-                        var tower = Instantiate(defaultTower);
-                        tower.transform.position = hit.point;
-                        towerCount++;
+						var parent = GameObject.FindGameObjectWithTag("EnemyPath");
+						var pathPointTransforms = parent.GetComponentsInChildren<Transform>().ToList();
+						pathPointTransforms.Remove(parent.transform);
+						foreach (var point in pathPointTransforms){
+							if(Vector3.Distance(point.transform.position, transform.position) > 0.1f && CanPayForTower(defaultTower)){
+								var tower = Instantiate(defaultTower);
+								tower.transform.position = hit.point;
+								towerCount++;
+							}
+						}
                     }
                 }
             }
