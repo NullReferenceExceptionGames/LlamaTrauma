@@ -6,7 +6,7 @@ using UnityEngine.SceneManagement;
 public class StartGame : MonoBehaviour {
 
 	public void start(){
-		SceneManager.LoadScene ("DarkGrass", LoadSceneMode.Single);
+		SceneManager.LoadScene ("LevelSelect", LoadSceneMode.Single);
 	}
 	// Update is called once per frame
 	void Update () {
