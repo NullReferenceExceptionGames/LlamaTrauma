@@ -239,9 +239,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 085349606dc244df68532ec325c855ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defaultTower: {fileID: 1792404229503882, guid: 71815b5ce920b43ab89e96b7faff6d6b,
+  defaultTower: {fileID: 1315084774350850, guid: 88e6184d4b3834c4cbeaec9513c7b840,
     type: 2}
-  money: 100
+  money: 1000
   moneyText: {fileID: 1038355697}
   healthText: {fileID: 163081997}
 --- !u!1 &16

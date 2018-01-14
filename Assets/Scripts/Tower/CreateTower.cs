@@ -8,7 +8,7 @@ public class CreateTower : MonoBehaviour
 {
 
     public GameObject defaultTower;
-    public int money = 50;
+    public int money;
     int health = 100;
     Camera cam;
     int towerCount = 0;
@@ -53,16 +53,16 @@ public class CreateTower : MonoBehaviour
                         var parent = GameObject.FindGameObjectWithTag("EnemyPath");
                         var pathPointTransforms = parent.GetComponentsInChildren<Transform>().ToList();
                         pathPointTransforms.Remove(parent.transform);
-                        foreach (var point in pathPointTransforms)
-                        {
-							//1.479f Smaller Number closer
-//                            if (Vector3.Distance(point.transform.position, transform.position) > 1.471f && CanPayForTower(defaultTower))
-//                            {
-//                                var tower = Instantiate(defaultTower);
-//                                tower.transform.position = hit.point;
-//                                towerCount++;
-//                            }
-                        }
+                        // foreach (var point in pathPointTransforms)
+                        //{
+                        //1.479f Smaller Number closer
+                        //                            if (Vector3.Distance(point.transform.position, transform.position) > 1.471f && CanPayForTower(defaultTower))
+                        //                            {
+                        //                                var tower = Instantiate(defaultTower);
+                        //                                tower.transform.position = hit.point;
+                        //                                towerCount++;
+                        //                            }
+                        //}
                     }
                 }
             }
