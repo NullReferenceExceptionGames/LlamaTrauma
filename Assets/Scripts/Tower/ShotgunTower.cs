@@ -6,26 +6,24 @@ public class ShotgunTower : Tower
 {
     const float bulletSpeed = 30f;
     const int numBullets = 5;
-    [SerializeField] GameObject hunter;
     [SerializeField] GameObject bullet;
 
-    public override void Shoot(Transform enemy)
+    public override void Shoot(Transform enemy, Quaternion lookAngle, Vector3 delta, Vector3 hunterPos)
     {
-        var delta = enemy.position - hunter.transform.position;
         var force = delta.normalized * bulletSpeed;
-        var lookAngle = Quaternion.LookRotation(delta);
         for (var i = 0; i < numBullets; i++)
         {
             var bul = Instantiate(bullet);
-            bul.transform.position = hunter.transform.position;
+            bul.transform.position = hunterPos;
             bul.transform.rotation = lookAngle;
+            lookAngle.x = 0f;
+            lookAngle.z = 0f;
             bul.GetComponent<Bullet>().SetIsTower(true);
             var randomAddition = new Vector3(randomVelocityAddition(), randomVelocityAddition(), randomVelocityAddition());
             var forceRandom = force + randomAddition;
             bul.GetComponent<Rigidbody>().AddForce(forceRandom);
             Destroy(bul, 4);
         }
-        hunter.transform.rotation = lookAngle;
     }
 
     float randomVelocityAddition()

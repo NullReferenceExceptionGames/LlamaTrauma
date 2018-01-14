@@ -238,4 +238,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   successor: {fileID: 0}
-  hunter: {fileID: 1714739802696622}
+  hunterPivot: {fileID: 1714739802696622}
