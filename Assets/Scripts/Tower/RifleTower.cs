@@ -4,14 +4,9 @@ using UnityEngine;
 
 public class RifleTower : Tower
 {
-    [SerializeField] GameObject hunter;
-
-    public override void Shoot(Transform enemy)
+    public override void Shoot(Transform enemy, Quaternion _0, Vector3 _1, Vector3 _2)
     {
         enemy.GetComponent<Enemy>().TakeDamage(byte.MaxValue);
-        var delta = enemy.position - hunter.transform.position;
-        var lookAngle = Quaternion.LookRotation(delta);
-        hunter.transform.rotation = lookAngle;
     }
 
     public override float GetFiringDelay()

@@ -5,20 +5,16 @@ using UnityEngine;
 public class BowTower : Tower
 {
     const float bulletSpeed = 100f;
-    [SerializeField] GameObject hunter;
     [SerializeField] GameObject bullet;
 
-    public override void Shoot(Transform enemy)
+    public override void Shoot(Transform enemy, Quaternion lookAngle, Vector3 delta, Vector3 hunterPos)
     {
-        var delta = enemy.position - hunter.transform.position;
         var force = delta.normalized * bulletSpeed;
         var bul = Instantiate(bullet);
-        bul.transform.position = hunter.transform.position;
-        var lookAngle = Quaternion.LookRotation(delta);
+        bul.transform.position = hunterPos;
         bul.transform.rotation = lookAngle;
         bul.GetComponent<Bullet>().SetIsTower(true);
         bul.GetComponent<Rigidbody>().AddForce(force);
-        hunter.transform.rotation = lookAngle;
         Destroy(bul, 4f);
     }
 

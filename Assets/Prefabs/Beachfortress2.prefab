@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4985659730666278}
   - component: {fileID: 65069963396455610}
-  - component: {fileID: 114650619924853508}
+  - component: {fileID: 114898107543525824}
   m_Layer: 0
   m_Name: Beachfortress2
   m_TagString: Untagged
@@ -226,7 +226,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 25, y: 35, z: 23}
   m_Center: {x: 10, y: 20, z: 6}
---- !u!114 &114650619924853508
+--- !u!114 &114898107543525824
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -234,9 +234,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 1058795651164746}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f140476a94df84aa9a39ed846bd1aca2, type: 3}
+  m_Script: {fileID: 11500000, guid: 478d525a05f554c5a9f0126da5559f07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   successor: {fileID: 1456337339888338, guid: 2d737fcd54e034a4e99bfb79bb5e2c1d, type: 2}
-  hunter: {fileID: 1508701377782154}
+  hunterPivot: {fileID: 1508701377782154}
   bullet: {fileID: 1532789817398888, guid: fd8895a779e3649f7a800b6ab7480865, type: 2}

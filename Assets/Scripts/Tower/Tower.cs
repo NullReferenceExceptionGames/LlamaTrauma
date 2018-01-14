@@ -4,13 +4,13 @@ using UnityEngine;
 
 public abstract class Tower : MonoBehaviour
 {
-    public abstract void Shoot(Transform enemy);
+    public abstract void Shoot(Transform enemy, Quaternion lookAngle, Vector3 delta, Vector3 hunterPos);
 
     public abstract float GetFiringDelay();
     public abstract int GetCost();
 
     public GameObject successor;
-
+    [SerializeField] GameObject hunterPivot;
     private int hitsByPlayerBeforeSale = 3;
 
     void Start()
@@ -29,14 +29,19 @@ public abstract class Tower : MonoBehaviour
                 var dis = 1000f;
                 foreach (var enemy in enemies)
                 {
-                    var tmpDis = Vector3.Distance(transform.position, enemy.transform.position);
+                    var tmpDis = Vector3.Distance(hunterPivot.transform.position, enemy.transform.position);
                     if (tmpDis < dis)
                     {
                         dis = tmpDis;
                         closestEnemy = enemy.transform;
                     }
                 }
-                Shoot(closestEnemy);
+
+                var delta = closestEnemy.position - hunterPivot.transform.position;
+                var lookAngle = Quaternion.LookRotation(delta);
+                Shoot(closestEnemy, lookAngle, delta, hunterPivot.transform.position);
+                var hunterAngle = Quaternion.LookRotation(new Vector3(delta.x, 0f, delta.z));
+                hunterPivot.transform.rotation = hunterAngle;
             }
             yield return new WaitForSeconds(GetFiringDelay());
         }
