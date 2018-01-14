@@ -4,9 +4,14 @@ using UnityEngine;
 
 public class SettingsOverlay : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-		
+	[SerializeField] GameObject overlay;
+	[SerializeField] GameObject canvas;
+
+	public void OverLay(){
+		GameObject settings = Instantiate (overlay, canvas.transform);
+		settings.transform.SetParent (canvas.transform);
+		//settings.transform.position = new Vector3 (0,0,0);
+		//settings.transform.position = new Vector3 (0, 0, 0);
 	}
 	
 	// Update is called once per frame
