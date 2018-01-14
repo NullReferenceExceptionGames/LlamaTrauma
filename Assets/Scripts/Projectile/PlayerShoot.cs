@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class PlayerShoot : MonoBehaviour
 {
+    public bool shoot = false;
     FiringMode firingMode;
-    bool shoot = false;
 
     void Start()
     {
@@ -33,7 +33,7 @@ public class PlayerShoot : MonoBehaviour
                 var projectileOriginal = GameObject.Find(firingMode.GetProjectileName());
                 var projectile = Instantiate(projectileOriginal);
                 firingMode.Fire(ray, projectile);
-				Destroy (projectile, 4);
+                Destroy(projectile, 4);
                 yield return new WaitForSeconds(firingMode.GetRepeatTimeSeconds());
             }
             yield return new WaitForFixedUpdate();

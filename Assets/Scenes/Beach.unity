@@ -191,6 +191,7 @@ Camera:
   m_TargetEye: 3
   m_HDR: 0
   m_AllowMSAA: 1
+  m_AllowDynamicResolution: 0
   m_ForceIntoRT: 0
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
@@ -1140,7 +1141,7 @@ GameObject:
   - component: {fileID: 578805324}
   m_Layer: 0
   m_Name: PlayerShootObj
-  m_TagString: Untagged
+  m_TagString: Shoot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1156,6 +1157,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 826031f5ad9b14612a00973592b38219, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shotRecently: 0
 --- !u!4 &578805325
 Transform:
   m_ObjectHideFlags: 0
