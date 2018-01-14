@@ -240,7 +240,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   defaultTower: {fileID: 1404443622890868, guid: ed873b434404a4794bf58fc0ef3de712,
     type: 2}
-  money: 100
+  money: 50
   moneyText: {fileID: 1449887217}
   healthText: {fileID: 470929550}
   win: {fileID: 1915474523821874, guid: 13719f88b2a0c45d595da9983d573139, type: 2}
@@ -1192,6 +1192,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114943659230074836, guid: 634e66bd320b04bdd9c588d4184f84c8,
+        type: 2}
+      propertyPath: enemyChoices.Array.size
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 4799263769096316, guid: 634e66bd320b04bdd9c588d4184f84c8, type: 2}
       propertyPath: m_LocalPosition.x
       value: 1.122191
@@ -1229,6 +1234,30 @@ Prefab:
       propertyPath: spawnsPerSecond
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 114943659230074836, guid: 634e66bd320b04bdd9c588d4184f84c8,
+        type: 2}
+      propertyPath: enemyChoices.Array.data[0]
+      value: 
+      objectReference: {fileID: 1834915494700386, guid: a05943e156a0c49b5bfb3fb8a1f3404d,
+        type: 2}
+    - target: {fileID: 114943659230074836, guid: 634e66bd320b04bdd9c588d4184f84c8,
+        type: 2}
+      propertyPath: enemyChoices.Array.data[1]
+      value: 
+      objectReference: {fileID: 1834915494700386, guid: a05943e156a0c49b5bfb3fb8a1f3404d,
+        type: 2}
+    - target: {fileID: 114943659230074836, guid: 634e66bd320b04bdd9c588d4184f84c8,
+        type: 2}
+      propertyPath: enemyChoices.Array.data[2]
+      value: 
+      objectReference: {fileID: 1834915494700386, guid: a05943e156a0c49b5bfb3fb8a1f3404d,
+        type: 2}
+    - target: {fileID: 114943659230074836, guid: 634e66bd320b04bdd9c588d4184f84c8,
+        type: 2}
+      propertyPath: enemyChoices.Array.data[3]
+      value: 
+      objectReference: {fileID: 1834915494700386, guid: a05943e156a0c49b5bfb3fb8a1f3404d,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 634e66bd320b04bdd9c588d4184f84c8, type: 2}
   m_IsPrefabParent: 0
