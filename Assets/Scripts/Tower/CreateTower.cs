@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class CreateTower : MonoBehaviour
 {
@@ -48,12 +49,15 @@ public class CreateTower : MonoBehaviour
                 }
                 else
                 {
-                    if (towerCount < towerLimit)
+					if (towerCount < towerLimit && CanPayForTower(defaultTower))
                     {
                         var parent = GameObject.FindGameObjectWithTag("EnemyPath");
                         var pathPointTransforms = parent.GetComponentsInChildren<Transform>().ToList();
                         pathPointTransforms.Remove(parent.transform);
-                        // foreach (var point in pathPointTransforms)
+						var tower = Instantiate(defaultTower);
+						tower.transform.position = hit.point;
+						towerCount++;
+						// foreach (var point in pathPointTransforms)
                         //{
                         //1.479f Smaller Number closer
                         //                            if (Vector3.Distance(point.transform.position, transform.position) > 1.471f && CanPayForTower(defaultTower))
@@ -67,7 +71,7 @@ public class CreateTower : MonoBehaviour
                 }
             }
         }
-        //moneyText.text = "$" + money.ToString();
+        moneyText.text = /*"$" +*/ money.ToString();
     }
 
     bool CanPayForTower(GameObject towerObject)
@@ -84,6 +88,9 @@ public class CreateTower : MonoBehaviour
     public void TakeDamage(int damage)
     {
         health -= damage;
-        //healthText.text = health.ToString() + " HP";
+		healthText.text = health.ToString ();// + " HP";
+		if (health <= 0) {
+			SceneManager.LoadScene ("GameOver", LoadSceneMode.Single);
+		}
     }
 }

@@ -3,11 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class GameOver : MonoBehaviour {
+public class ReturnToMenu : MonoBehaviour {
+
+	public void menu(){
+		SceneManager.LoadScene ("MainMenu", LoadSceneMode.Single);
+	}
 	// Update is called once per frame
 	void Update () {
-		if (Time.timeSinceLevelLoad > 10f) {
-			SceneManager.LoadScene ("MainMenu", LoadSceneMode.Single);
-		}
+		
 	}
 }
