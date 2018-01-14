@@ -16,21 +16,11 @@ public class Bullet : MonoBehaviour
         if (other.tag == "Enemy")
         {
             other.GetComponent<Enemy>().TakeDamage(20);
+            Destroy(gameObject);
         }
         else if (!isTower && other.tag == "Tower")
         {
             other.GetComponent<Tower>().HitByPlayer();
         }
-    }
-
-    void Terminate()
-    {
-        Destroy(gameObject);
-    }
-
-    public enum Sender
-    {
-        PLAYER,
-        TOWER
     }
 }

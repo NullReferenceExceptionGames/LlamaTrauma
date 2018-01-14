@@ -8,7 +8,8 @@ public abstract class Enemy : MonoBehaviour
     const float unitsPerSecond = 0.2f;
     Vector3[] pathPoints;
     float[] pathPointTimings;
-    float lastIterStart;
+    public float lastIterStart;
+    public int i;
     byte health = 50;
 
     protected abstract byte GetMaxHealth();
@@ -28,11 +29,11 @@ public abstract class Enemy : MonoBehaviour
         ).ToList();
         var points = new List<Vector3>();
         var timings = new List<float>();
-        for (var i = 0; i < pathPointTransforms.Count - 1; i++)
+        for (var j = 0; j < pathPointTransforms.Count - 1; j++)
         {
-            var currentPosition = pathPointTransforms[i].position;
+            var currentPosition = pathPointTransforms[j].position;
             points.Add(currentPosition);
-            var timing = (pathPointTransforms[i + 1].position - currentPosition).magnitude / unitsPerSecond;
+            var timing = (pathPointTransforms[j + 1].position - currentPosition).magnitude / unitsPerSecond;
             timings.Add(timing);
         }
         points.Add(pathPointTransforms[pathPointTransforms.Count - 1].position);
@@ -52,7 +53,7 @@ public abstract class Enemy : MonoBehaviour
 
     IEnumerator FollowPath()
     {
-        for (var i = 0; i < pathPoints.Length - 1; i++)
+        for (i = 0; i < pathPoints.Length - 1; i++)
         {
             lastIterStart = Time.timeSinceLevelLoad;
             var endTime = lastIterStart + pathPointTimings[i];
