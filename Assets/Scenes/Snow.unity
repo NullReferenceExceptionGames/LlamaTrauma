@@ -240,7 +240,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   defaultTower: {fileID: 1441645709195622, guid: 2bd99679bd8504f508438764d1d84110,
     type: 2}
-  money: 500
+  money: 40
   moneyText: {fileID: 111589161}
   healthText: {fileID: 880115733}
   win: {fileID: 1915474523821874, guid: 13719f88b2a0c45d595da9983d573139, type: 2}
@@ -478,7 +478,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 50
+  m_Text: 40
 --- !u!222 &111589162
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1239,7 +1239,7 @@ GameObject:
   - component: {fileID: 578805324}
   m_Layer: 0
   m_Name: PlayerShootObj
-  m_TagString: Untagged
+  m_TagString: Shoot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1846,7 +1846,7 @@ GameObject:
   - component: {fileID: 1027941720}
   m_Layer: 5
   m_Name: Settings
-  m_TagString: Untagged
+  m_TagString: Settings
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
