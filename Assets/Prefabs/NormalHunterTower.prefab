@@ -226,7 +226,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   successor: {fileID: 1071030362502334, guid: b21c0cbcc52964a7fa21070b83521d22, type: 2}
-  hunter: {fileID: 1312605491059098}
+  hunterPivot: {fileID: 1312605491059098}
   bullet: {fileID: 1560192737533736, guid: 140389824e072400fb19223eae8cb5d3, type: 2}
 --- !u!135 &135401636332952394
 SphereCollider:

@@ -191,6 +191,7 @@ Camera:
   m_TargetEye: 3
   m_HDR: 0
   m_AllowMSAA: 1
+  m_AllowDynamicResolution: 0
   m_ForceIntoRT: 0
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
@@ -1192,6 +1193,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114943659230074836, guid: 634e66bd320b04bdd9c588d4184f84c8,
+        type: 2}
+      propertyPath: enemyChoices.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4799263769096316, guid: 634e66bd320b04bdd9c588d4184f84c8, type: 2}
       propertyPath: m_LocalPosition.x
       value: 1.122191
@@ -1229,6 +1235,12 @@ Prefab:
       propertyPath: spawnsPerSecond
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 114943659230074836, guid: 634e66bd320b04bdd9c588d4184f84c8,
+        type: 2}
+      propertyPath: enemyChoices.Array.data[0]
+      value: 
+      objectReference: {fileID: 1987779027673510, guid: c8dd0096056bc4d6f8d488597c877b0a,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 634e66bd320b04bdd9c588d4184f84c8, type: 2}
   m_IsPrefabParent: 0

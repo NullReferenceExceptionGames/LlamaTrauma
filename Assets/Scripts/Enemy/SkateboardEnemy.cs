@@ -17,7 +17,7 @@ public class SkateboardEnemy : Enemy
 
     protected override void OnSpawn()
     {
-        minScale = transform.localScale / 5;
+        minScale = transform.localScale / 2;
         interpolatedScale = transform.localScale - minScale;
     }
 

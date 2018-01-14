@@ -226,7 +226,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   successor: {fileID: 0}
-  hunter: {fileID: 1362959133671596}
+  hunterPivot: {fileID: 1362959133671596}
 --- !u!135 &135070922508779226
 SphereCollider:
   m_ObjectHideFlags: 1
