@@ -76,13 +76,13 @@ public class CreateTower : MonoBehaviour
                     }
                 }
             }
-        }
-        moneyText.text = /*"$" +*/ money.ToString();
-        if (Time.timeSinceLevelLoad >= 180f && winB != true)
-        {
-            GameObject settings = Instantiate(win, canvas.transform);
-            GameObject winV = Instantiate(winVoxel);
-            winB = true;
+        
+			moneyText.text = /*"$" +*/ money.ToString();
+			if (Time.timeSinceLevelLoad >= 5f && winB != true) {
+				GameObject settings = Instantiate (win, canvas.transform);
+				GameObject winV = Instantiate (winVoxel);
+				winB = true;
+			}
         }
     }
 

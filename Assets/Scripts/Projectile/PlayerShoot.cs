@@ -30,6 +30,7 @@ public class PlayerShoot : MonoBehaviour
             while (shoot)
             {
                 GetComponent<AudioSource>().Play();
+
                 var ray = Camera.main.transform.rotation * Vector3.forward;
                 var projectileOriginal = GameObject.Find(firingMode.GetProjectileName());
                 var projectile = Instantiate(projectileOriginal);
