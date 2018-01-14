@@ -11,7 +11,7 @@ public class TwoHeadEnemy : Enemy
 
     protected override int GetBounty()
     {
-        return 10;
+        return 15;
     }
 
     protected override void OnSpawn()

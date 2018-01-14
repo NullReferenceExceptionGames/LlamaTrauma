@@ -191,6 +191,7 @@ Camera:
   m_TargetEye: 3
   m_HDR: 0
   m_AllowMSAA: 1
+  m_AllowDynamicResolution: 0
   m_ForceIntoRT: 0
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
@@ -240,7 +241,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   defaultTower: {fileID: 1315084774350850, guid: 88e6184d4b3834c4cbeaec9513c7b840,
     type: 2}
-  money: 50
+  money: 500
   moneyText: {fileID: 2006940093}
   healthText: {fileID: 1400073916}
 --- !u!1 &16

@@ -23,7 +23,7 @@ GameObject:
   - component: {fileID: 114185215044560758}
   m_Layer: 0
   m_Name: Snow_tower_2
-  m_TagString: Untagged
+  m_TagString: Tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -238,5 +238,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   successor: {fileID: 1471736962104752, guid: 3c34b60c35176408e976af7cc26e9d90, type: 2}
-  hunter: {fileID: 1540319564028894}
+  hunterPivot: {fileID: 1540319564028894}
   bullet: {fileID: 1377275871591742, guid: 79a429aeaede142318ce400ac008cf22, type: 2}

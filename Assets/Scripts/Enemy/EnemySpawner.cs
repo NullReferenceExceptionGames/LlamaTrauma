@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemySpawner : MonoBehaviour
 {
 
-    [SerializeField] GameObject enemy;
+    [SerializeField] GameObject[] enemyChoices;
     [SerializeField] float spawnsPerSecond;
 
     // Update is called once per frame
@@ -13,7 +13,9 @@ public class EnemySpawner : MonoBehaviour
     {
         if (Random.Range(0f, 1f) < spawnsPerSecond * Time.deltaTime)
         {
-            Instantiate(enemy);
+            var i = Random.Range(0, enemyChoices.Length);
+            var choice = enemyChoices[i];
+            Instantiate(choice);
         }
     }
 }

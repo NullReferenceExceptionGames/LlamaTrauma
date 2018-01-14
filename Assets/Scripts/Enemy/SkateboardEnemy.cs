@@ -12,7 +12,7 @@ public class SkateboardEnemy : Enemy
 
     protected override int GetBounty()
     {
-        return 10;
+        return 5;
     }
 
     protected override void OnSpawn()
