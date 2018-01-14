@@ -10,7 +10,7 @@ public class CreateTower : MonoBehaviour
 
     public GameObject defaultTower;
     public int money;
-    int health = 1;
+    int health = 100;
     Camera cam;
     int towerCount = 0;
 	bool winB = false;
