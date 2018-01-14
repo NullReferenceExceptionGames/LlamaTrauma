@@ -55,12 +55,13 @@ public class CreateTower : MonoBehaviour
                         pathPointTransforms.Remove(parent.transform);
                         foreach (var point in pathPointTransforms)
                         {
-                            if (Vector3.Distance(point.transform.position, transform.position) > 0.1f && CanPayForTower(defaultTower))
-                            {
-                                var tower = Instantiate(defaultTower);
-                                tower.transform.position = hit.point;
-                                towerCount++;
-                            }
+							//1.479f Smaller Number closer
+//                            if (Vector3.Distance(point.transform.position, transform.position) > 1.471f && CanPayForTower(defaultTower))
+//                            {
+//                                var tower = Instantiate(defaultTower);
+//                                tower.transform.position = hit.point;
+//                                towerCount++;
+//                            }
                         }
                     }
                 }
