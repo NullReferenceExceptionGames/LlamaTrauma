@@ -15,7 +15,7 @@ public class Bullet : MonoBehaviour
     {
         if (other.tag == "Enemy")
         {
-            other.GetComponent<Enemy>().TakeDamage(20);
+            other.GetComponent<Enemy>().TakeDamage(10);
             Destroy(gameObject);
         }
         else if (!isTower && other.tag == "Tower")
