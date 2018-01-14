@@ -16,6 +16,9 @@ public class SceneChanger : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+		if (Input.touches.Length > 0) {
+			SceneManager.LoadScene("MainMenu", LoadSceneMode.Single);
+		}
 		if (Time.timeSinceLevelLoad >= 15f) {
 			var scene1 = GameObject.FindGameObjectsWithTag ("Scene");
 			foreach (var i in scene1) {
