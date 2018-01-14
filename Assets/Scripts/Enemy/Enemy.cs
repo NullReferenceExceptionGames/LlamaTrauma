@@ -9,7 +9,7 @@ public abstract class Enemy : MonoBehaviour
     Vector3[] pathPoints;
     float[] pathPointTimings;
     public float lastIterStart;
-    public int i;
+    public int i = 0;
     byte health = 50;
 
     protected abstract byte GetMaxHealth();
@@ -53,7 +53,7 @@ public abstract class Enemy : MonoBehaviour
 
     IEnumerator FollowPath()
     {
-        for (i = 0; i < pathPoints.Length - 1; i++)
+        for (; i < pathPoints.Length - 1; i++)
         {
             lastIterStart = Time.timeSinceLevelLoad;
             var endTime = lastIterStart + pathPointTimings[i];
