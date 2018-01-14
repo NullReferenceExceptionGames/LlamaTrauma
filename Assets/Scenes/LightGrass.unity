@@ -191,7 +191,6 @@ Camera:
   m_TargetEye: 3
   m_HDR: 0
   m_AllowMSAA: 1
-  m_AllowDynamicResolution: 0
   m_ForceIntoRT: 0
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
@@ -244,6 +243,9 @@ MonoBehaviour:
   money: 500
   moneyText: {fileID: 2006940093}
   healthText: {fileID: 1400073916}
+  win: {fileID: 1915474523821874, guid: 13719f88b2a0c45d595da9983d573139, type: 2}
+  winVoxel: {fileID: 1444682708775838, guid: e306edad2f9754aeab899b5ee5294159, type: 2}
+  canvas: {fileID: 144570486}
 --- !u!1 &16
 GameObject:
   m_ObjectHideFlags: 0
@@ -741,6 +743,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   overlay: {fileID: 1324308338272280, guid: a771b4718cc2f4ac1931951a07de361e, type: 2}
   canvas: {fileID: 144570486}
+  voxel: {fileID: 0}
 --- !u!1 &349843151
 GameObject:
   m_ObjectHideFlags: 0
@@ -1056,6 +1059,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 826031f5ad9b14612a00973592b38219, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shoot: 0
 --- !u!4 &578805325
 Transform:
   m_ObjectHideFlags: 0
