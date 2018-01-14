@@ -67,7 +67,7 @@ public class CreateTower : MonoBehaviour
                 }
             }
         }
-        moneyText.text = "$" + money.ToString();
+        //moneyText.text = "$" + money.ToString();
     }
 
     bool CanPayForTower(GameObject towerObject)
@@ -84,6 +84,6 @@ public class CreateTower : MonoBehaviour
     public void TakeDamage(int damage)
     {
         health -= damage;
-        healthText.text = health.ToString() + " HP";
+        //healthText.text = health.ToString() + " HP";
     }
 }
