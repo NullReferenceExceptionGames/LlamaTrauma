@@ -57,7 +57,7 @@ GameObject:
   - component: {fileID: 114167987809345662}
   m_Layer: 0
   m_Name: barn
-  m_TagString: Untagged
+  m_TagString: Tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -180,7 +180,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 5cece3a9820234b60b0fea56d585cff1, type: 2}
+  - {fileID: 2100000, guid: 64ae0aebd458e4d69b8e104fcc27a6ed, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -238,5 +238,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   successor: {fileID: 1524861589374138, guid: 50c0f921d25d94928b6c61970ab17abe, type: 2}
-  hunter: {fileID: 1589227535520506}
+  hunterPivot: {fileID: 1589227535520506}
   bullet: {fileID: 1560192737533736, guid: 140389824e072400fb19223eae8cb5d3, type: 2}

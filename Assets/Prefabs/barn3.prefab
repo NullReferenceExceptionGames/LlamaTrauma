@@ -38,7 +38,7 @@ GameObject:
   - component: {fileID: 65685356530813356}
   m_Layer: 0
   m_Name: barn3
-  m_TagString: Untagged
+  m_TagString: Tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -238,4 +238,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   successor: {fileID: 0}
-  hunter: {fileID: 1298871737049378}
+  hunterPivot: {fileID: 1298871737049378}

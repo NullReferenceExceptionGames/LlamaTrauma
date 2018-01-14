@@ -1977,6 +1977,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114943659230074836, guid: 634e66bd320b04bdd9c588d4184f84c8,
+        type: 2}
+      propertyPath: enemyChoices.Array.size
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 4799263769096316, guid: 634e66bd320b04bdd9c588d4184f84c8, type: 2}
       propertyPath: m_LocalPosition.x
       value: 1.122191
@@ -2019,6 +2024,42 @@ Prefab:
       propertyPath: enemy
       value: 
       objectReference: {fileID: 1625614692692202, guid: 15fb01515dafe44ec999e1d6f2476c5a,
+        type: 2}
+    - target: {fileID: 114943659230074836, guid: 634e66bd320b04bdd9c588d4184f84c8,
+        type: 2}
+      propertyPath: enemyChoices.Array.data[0]
+      value: 
+      objectReference: {fileID: 1686533006745170, guid: 659debf5bb5cd4e2cae0d6754d5d1d86,
+        type: 2}
+    - target: {fileID: 114943659230074836, guid: 634e66bd320b04bdd9c588d4184f84c8,
+        type: 2}
+      propertyPath: enemyChoices.Array.data[1]
+      value: 
+      objectReference: {fileID: 1686533006745170, guid: 659debf5bb5cd4e2cae0d6754d5d1d86,
+        type: 2}
+    - target: {fileID: 114943659230074836, guid: 634e66bd320b04bdd9c588d4184f84c8,
+        type: 2}
+      propertyPath: enemyChoices.Array.data[2]
+      value: 
+      objectReference: {fileID: 1686533006745170, guid: 659debf5bb5cd4e2cae0d6754d5d1d86,
+        type: 2}
+    - target: {fileID: 114943659230074836, guid: 634e66bd320b04bdd9c588d4184f84c8,
+        type: 2}
+      propertyPath: enemyChoices.Array.data[3]
+      value: 
+      objectReference: {fileID: 1686533006745170, guid: 659debf5bb5cd4e2cae0d6754d5d1d86,
+        type: 2}
+    - target: {fileID: 114943659230074836, guid: 634e66bd320b04bdd9c588d4184f84c8,
+        type: 2}
+      propertyPath: enemyChoices.Array.data[4]
+      value: 
+      objectReference: {fileID: 1437188400296612, guid: 26b05e6a22f97433eb31523b3a738c96,
+        type: 2}
+    - target: {fileID: 114943659230074836, guid: 634e66bd320b04bdd9c588d4184f84c8,
+        type: 2}
+      propertyPath: enemyChoices.Array.data[5]
+      value: 
+      objectReference: {fileID: 1168910839750854, guid: 9b0789f3b67c042c689035901ef506b3,
         type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 634e66bd320b04bdd9c588d4184f84c8, type: 2}
