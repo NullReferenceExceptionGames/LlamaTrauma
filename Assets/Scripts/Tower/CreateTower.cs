@@ -13,9 +13,13 @@ public class CreateTower : MonoBehaviour
     int health = 1;
     Camera cam;
     int towerCount = 0;
+	bool winB = false;
     int towerLimit = 10;
     [SerializeField] Text moneyText;
     [SerializeField] Text healthText;
+	[SerializeField] GameObject win;
+	[SerializeField] GameObject winVoxel;
+	[SerializeField] GameObject canvas;
 
     // Use this for initialization
     void Start()
@@ -72,6 +76,11 @@ public class CreateTower : MonoBehaviour
             }
         }
         moneyText.text = /*"$" +*/ money.ToString();
+		if (Time.timeSinceLevelLoad >= 180f && winB != true) {
+			GameObject settings = Instantiate (win, canvas.transform);
+			GameObject winV = Instantiate (winVoxel);
+			winB = true;
+		}
     }
 
     bool CanPayForTower(GameObject towerObject)

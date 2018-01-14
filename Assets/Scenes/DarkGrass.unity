@@ -243,6 +243,9 @@ MonoBehaviour:
   money: 100
   moneyText: {fileID: 1449887217}
   healthText: {fileID: 470929550}
+  win: {fileID: 1915474523821874, guid: 13719f88b2a0c45d595da9983d573139, type: 2}
+  winVoxel: {fileID: 1444682708775838, guid: e306edad2f9754aeab899b5ee5294159, type: 2}
+  canvas: {fileID: 144570486}
 --- !u!1 &16
 GameObject:
   m_ObjectHideFlags: 0
@@ -2512,6 +2515,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   overlay: {fileID: 1324308338272280, guid: a771b4718cc2f4ac1931951a07de361e, type: 2}
   canvas: {fileID: 144570486}
+  voxel: {fileID: 0}
 --- !u!1 &1608341542
 GameObject:
   m_ObjectHideFlags: 0
