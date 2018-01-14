@@ -3,13 +3,14 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class StartGame : MonoBehaviour {
+public class LoadScene4 : MonoBehaviour {
 
-	public void start(){
-		SceneManager.LoadScene ("LevelSelect", LoadSceneMode.Single);
+	public void press(){
+		SceneManager.LoadScene ("Snow", LoadSceneMode.Single);
 	}
+
 	// Update is called once per frame
 	void Update () {
-		
+
 	}
 }

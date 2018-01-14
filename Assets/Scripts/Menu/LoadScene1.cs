@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class StartGame : MonoBehaviour {
-
-	public void start(){
-		SceneManager.LoadScene ("LevelSelect", LoadSceneMode.Single);
+public class LoadScene1 : MonoBehaviour {
+	
+	public void press(){
+		SceneManager.LoadScene ("DarkGrass", LoadSceneMode.Single);
 	}
+
 	// Update is called once per frame
 	void Update () {
 		
