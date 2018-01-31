@@ -241,7 +241,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   defaultTower: {fileID: 1792404229503882, guid: 71815b5ce920b43ab89e96b7faff6d6b,
     type: 2}
-  money: 500
+  money: 50
   moneyText: {fileID: 1393014651}
   healthText: {fileID: 978359953}
   win: {fileID: 0}

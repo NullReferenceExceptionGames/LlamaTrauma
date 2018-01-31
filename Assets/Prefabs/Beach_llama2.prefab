@@ -136,4 +136,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17dea43c015304a849968ad376df6e2e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  lastIterStart: 0
+  i: 0
   deathEnemy: {fileID: 1625614692692202, guid: 15fb01515dafe44ec999e1d6f2476c5a, type: 2}

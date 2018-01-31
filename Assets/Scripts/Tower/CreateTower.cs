@@ -10,6 +10,7 @@ public class CreateTower : MonoBehaviour
 {
 
     public GameObject defaultTower;
+    public bool menuEnabled = false;
     public int money;
     int health = 100;
     Camera cam;
@@ -38,7 +39,7 @@ public class CreateTower : MonoBehaviour
             yield return new WaitForEndOfFrame();
             if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
             {
-                if (shoot.shoot)
+                if (shoot.shoot || menuEnabled)
                 {
                     continue;
                 }
@@ -76,13 +77,14 @@ public class CreateTower : MonoBehaviour
                     }
                 }
             }
-        
-			moneyText.text = /*"$" +*/ money.ToString();
-			if (Time.timeSinceLevelLoad >= 180f && winB != true) {
-				GameObject settings = Instantiate (win, canvas.transform);
-				GameObject winV = Instantiate (winVoxel);
-				winB = true;
-			}
+
+            moneyText.text = /*"$" +*/ money.ToString();
+            if (Time.timeSinceLevelLoad >= 180f && winB != true)
+            {
+                GameObject settings = Instantiate(win, canvas.transform);
+                GameObject winV = Instantiate(winVoxel);
+                winB = true;
+            }
         }
     }
 

@@ -241,6 +241,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   defaultTower: {fileID: 1441645709195622, guid: 2bd99679bd8504f508438764d1d84110,
     type: 2}
+  menuEnabled: 0
   money: 50
   moneyText: {fileID: 111589161}
   healthText: {fileID: 880115733}
@@ -1853,8 +1854,8 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 919542573}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.004804313, y: -0.38993472, z: 1.1543095}
-  m_LocalScale: {x: 1, y: 0.1, z: 1}
+  m_LocalPosition: {x: 0.004804313, y: -0.341, z: 1.1543095}
+  m_LocalScale: {x: 1, y: 0.001, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 14
@@ -1928,7 +1929,7 @@ GameObject:
   - component: {fileID: 1027941720}
   m_Layer: 5
   m_Name: Settings
-  m_TagString: Settings
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
