@@ -191,7 +191,6 @@ Camera:
   m_TargetEye: 3
   m_HDR: 0
   m_AllowMSAA: 1
-  m_AllowDynamicResolution: 0
   m_ForceIntoRT: 0
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
@@ -245,9 +244,9 @@ MonoBehaviour:
   money: 50
   moneyText: {fileID: 1393014651}
   healthText: {fileID: 978359953}
-  win: {fileID: 0}
-  winVoxel: {fileID: 0}
-  canvas: {fileID: 0}
+  win: {fileID: 1915474523821874, guid: 13719f88b2a0c45d595da9983d573139, type: 2}
+  winVoxel: {fileID: 1444682708775838, guid: e306edad2f9754aeab899b5ee5294159, type: 2}
+  canvas: {fileID: 144570486}
 --- !u!1 &16
 GameObject:
   m_ObjectHideFlags: 0
