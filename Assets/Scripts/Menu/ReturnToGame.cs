@@ -7,6 +7,7 @@ public class ReturnToGame : MonoBehaviour
 
     public void back()
     {
+        Time.timeScale = 1f;
         Camera.main.GetComponent<CreateTower>().menuEnabled = false;
         var settings = GameObject.FindGameObjectsWithTag("Settings");
         foreach (var i in settings)

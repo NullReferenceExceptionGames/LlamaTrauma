@@ -14,6 +14,7 @@ public class SettingsOverlay : MonoBehaviour
         GameObject settings = Instantiate(overlay, canvas.transform);
         settings.transform.SetParent(canvas.transform);
         Camera.main.GetComponent<CreateTower>().menuEnabled = true;
+        Time.timeScale = 0f;
 
         //settings.transform.position = new Vector3 (0,0,0);
         //settings.transform.position = new Vector3 (0, 0, 0);
