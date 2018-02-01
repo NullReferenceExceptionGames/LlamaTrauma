@@ -2385,7 +2385,7 @@ Prefab:
     - target: {fileID: 114943659230074836, guid: 634e66bd320b04bdd9c588d4184f84c8,
         type: 2}
       propertyPath: spawnsPerSecond
-      value: 0.3
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 114943659230074836, guid: 634e66bd320b04bdd9c588d4184f84c8,
         type: 2}
