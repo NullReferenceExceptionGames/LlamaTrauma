@@ -191,6 +191,7 @@ Camera:
   m_TargetEye: 3
   m_HDR: 0
   m_AllowMSAA: 1
+  m_AllowDynamicResolution: 0
   m_ForceIntoRT: 0
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
@@ -240,6 +241,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   defaultTower: {fileID: 1404443622890868, guid: ed873b434404a4794bf58fc0ef3de712,
     type: 2}
+  menuEnabled: 0
   money: 100
   moneyText: {fileID: 0}
   healthText: {fileID: 0}
@@ -411,11 +413,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 7ea3b227f61ac47bda704352279bfe53, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.25
+      value: -6.25
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 7ea3b227f61ac47bda704352279bfe53, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 7ea3b227f61ac47bda704352279bfe53, type: 3}
       propertyPath: m_LocalRotation.x
@@ -517,11 +519,11 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 02945ea5ad6444c4fa9ca9a7127b14bf, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3
+      value: -5
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 02945ea5ad6444c4fa9ca9a7127b14bf, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 02945ea5ad6444c4fa9ca9a7127b14bf, type: 3}
       propertyPath: m_LocalRotation.x
