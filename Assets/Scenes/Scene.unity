@@ -192,6 +192,7 @@ Camera:
   m_TargetEye: 3
   m_HDR: 0
   m_AllowMSAA: 1
+  m_AllowDynamicResolution: 0
   m_ForceIntoRT: 0
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
@@ -241,6 +242,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   defaultTower: {fileID: 1404443622890868, guid: ed873b434404a4794bf58fc0ef3de712,
     type: 2}
+  menuEnabled: 0
   money: 100
   moneyText: {fileID: 0}
   healthText: {fileID: 0}
@@ -579,7 +581,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -601,7 +603,7 @@ MonoBehaviour:
     m_LineSpacing: 1.2
   m_Text: "Life was good before the rise of the llamas. We didn't have to worry about
     invasion or death. We minded our business and llamas were simply another harmless
-    animal. Until they decided they became tired of human tyranny.  \n"
+    animal. Until they decided they were tired of human tyranny.  \n"
 --- !u!222 &1336409513
 CanvasRenderer:
   m_ObjectHideFlags: 0

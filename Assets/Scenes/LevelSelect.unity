@@ -191,6 +191,7 @@ Camera:
   m_TargetEye: 3
   m_HDR: 0
   m_AllowMSAA: 1
+  m_AllowDynamicResolution: 0
   m_ForceIntoRT: 0
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
@@ -240,6 +241,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   defaultTower: {fileID: 1404443622890868, guid: ed873b434404a4794bf58fc0ef3de712,
     type: 2}
+  menuEnabled: 0
   money: 100
   moneyText: {fileID: 0}
   healthText: {fileID: 0}
@@ -272,7 +274,7 @@ RectTransform:
   m_GameObject: {fileID: 160736519}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children: []
   m_Father: {fileID: 1901228980}
   m_RootOrder: 3
@@ -393,7 +395,7 @@ RectTransform:
   m_GameObject: {fileID: 217055335}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children: []
   m_Father: {fileID: 1901228980}
   m_RootOrder: 1
@@ -514,7 +516,7 @@ RectTransform:
   m_GameObject: {fileID: 227671705}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children: []
   m_Father: {fileID: 1901228980}
   m_RootOrder: 4
@@ -691,7 +693,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 62a6c376c7db840a3809fe4b52f35a74, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -25
+      value: -30
       objectReference: {fileID: 0}
     - target: {fileID: 400002, guid: 62a6c376c7db840a3809fe4b52f35a74, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1322,7 +1324,7 @@ RectTransform:
   m_GameObject: {fileID: 2082839016}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
   m_Children: []
   m_Father: {fileID: 1901228980}
   m_RootOrder: 2
