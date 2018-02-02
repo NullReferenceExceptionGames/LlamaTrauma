@@ -17,6 +17,7 @@ public class CreateTower : MonoBehaviour
     int towerCount = 0;
     bool winB = false;
     int towerLimit = 10;
+    Text timeText;
     [SerializeField] Text moneyText;
     [SerializeField] Text healthText;
     [SerializeField] GameObject win;
@@ -27,6 +28,7 @@ public class CreateTower : MonoBehaviour
     void Start()
     {
         cam = Camera.main;
+        timeText = GameObject.FindGameObjectWithTag("TimeText").GetComponent<Text>();
         StartCoroutine(CreateTowers());
     }
 
@@ -78,11 +80,16 @@ public class CreateTower : MonoBehaviour
                 }
             }
 
-            moneyText.text = /*"$" +*/ money.ToString();
+            moneyText.text = money.ToString();
+
+            var timeLeft = 180 - (int)Time.timeSinceLevelLoad;
+            var seconds = timeLeft % 60;
+            var minutes = timeLeft / 60;
+            var secondsString = seconds < 10 ? "0" + seconds.ToString() : seconds.ToString();
+            timeText.text = timeLeft > 0 ? minutes.ToString() + ":" + secondsString : "0:00";
             if (Time.timeSinceLevelLoad >= 180f && winB != true)
             {
-                GameObject settings = Instantiate(win, canvas.transform);
-                GameObject winV = Instantiate(winVoxel);
+                Instantiate(winVoxel);
                 winB = true;
             }
         }

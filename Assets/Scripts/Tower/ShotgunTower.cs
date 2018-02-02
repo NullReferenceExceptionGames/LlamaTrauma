@@ -5,7 +5,7 @@ using UnityEngine;
 public class ShotgunTower : Tower
 {
     const float bulletSpeed = 30f;
-    const int numBullets = 5;
+    const int numBullets = 10;
     [SerializeField] GameObject bullet;
 
     public override void Shoot(Transform enemy, Quaternion lookAngle, Vector3 delta, Vector3 hunterPos)
@@ -33,7 +33,7 @@ public class ShotgunTower : Tower
 
     public override float GetFiringDelay()
     {
-        return 0.4f;
+        return 2f;
     }
 
     public override int GetCost()
